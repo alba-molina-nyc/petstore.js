@@ -3,16 +3,20 @@ $(document).ready(function(){
     $('.sidenav').sidenav();
   });
         
-$('#numAnimalsBtn').click(function(numAnimals, avgFood){
-    var numAnimalsField = $('#numAnimals');
+$(`#numAnimalsBtn`).click(function(numAnimals, avgFood) {
+    var numAnimalsField = $(`#numAnimalsInput`);
     var numAnimals = numAnimalsField.val();
-    var avgFood = numAnimals * 3;
+    var avgFood = 3 * numAnimals;
+    var placeOrder = true;
     if (numAnimals <= 0) {
-        console.log(avgFood + 'no need to place order because you said there are 0 or less animals at the moment')
-    }
-    else {
-        $('#calculateFoodOrderResults').show();
+        placeOrder = false;
+        $('#lessOrEqual0').show();
         console.log(avgFood);
-
+    }
+    if (numAnimals >= 1){
+        placeOrder = true;
+        $('#lessOrEqual0').hide();
+        $('#greaterThan0').show();
+        console.log(avgFood);
     }
 })

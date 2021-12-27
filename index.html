@@ -29,11 +29,20 @@
     <li><a href="sass.html">Sass</a></li>
   </ul>
     <h1>🐾🛍</h1>
+
+    <!-- form to grab information about how many animals at the shop -->
    <form>
-     <input type="number" name="numAnimals" id="numAnimals">
-   <button name="submit" id="numAnimalsBtn">Submit</button>
+     <input id="numAnimalsInput" name="numAnimalsInput">
+     <button id="numAnimalsBtn" name="numAnimalsBtn">Submit</button>
+
    </form>
-   <p id="calculateFoodOrderResults"></p>
+
+   <!-- span to display info sent through form -->
+   <ul>
+     <li id="lessOrEqual0" hidden>No need to place orders because there are zero or less than zero animals in the store this week </li>
+     <li id="greaterThan0" hidden> You need to order <span> </span> food orders this week</li>
+   </ul>
+
 
 
     <footer class="page-footer">
